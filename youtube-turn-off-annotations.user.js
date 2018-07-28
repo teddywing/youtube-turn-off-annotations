@@ -12,41 +12,21 @@ var settings_button = document.querySelector('.ytp-settings-button');
 settings_button.click();
 settings_button.click();
 
-// var find_annotations_interval = window.setInterval(function() {
-	// var annotations_is_present = document.evaluate(
-	// 	"//div[contains(@class, 'ytp-settings-menu')] \
-	// 		//div[ \
-	// 			contains(@class, 'ytp-menuitem-label') and \
-	// 			contains(., 'Annotations') \
-	// 		]",
-	// 	document,
-	// 	null,
-	// 	XPathResult.FIRST_ORDERED_NODE_TYPE,
-	// 	null
-	// );
-    //
-	// console.log(annotations_is_present);
-	// if (annotations_is_present) {
-		var annotations_menu_item = document.evaluate(
-			"//div[contains(@class, 'ytp-settings-menu')] \
-				//div[ \
-					@aria-checked='true' and \
-					//div[ \
-						contains(@class, 'ytp-menuitem-label') and \
-						contains(., 'Annotations') \
-					] \
-				]",
-			document,
-			null,
-			XPathResult.FIRST_ORDERED_NODE_TYPE,
-			null
-		);
+var annotations_menu_item = document.evaluate(
+	"//div[contains(@class, 'ytp-settings-menu')] \
+		//div[ \
+			@aria-checked='true' and \
+			//div[ \
+				contains(@class, 'ytp-menuitem-label') and \
+				contains(., 'Annotations') \
+			] \
+		]",
+	document,
+	null,
+	XPathResult.FIRST_ORDERED_NODE_TYPE,
+	null
+);
 
-		if (annotations_menu_item.singleNodeValue) {
-			annotations_menu_item.singleNodeValue.click();
-			console.log(annotations_menu_item.singleNodeValue);
-		}
-
-		// window.clearInterval(find_annotations_interval);
-// 	}
-// }, 1000);
+if (annotations_menu_item.singleNodeValue) {
+	annotations_menu_item.singleNodeValue.click();
+}
