@@ -21,6 +21,22 @@ var annotations_menu_item = document.evaluate(
 	null
 );
 
-if (annotations_menu_item) {
-	annotations_menu_item.singleNodeValue.click();
-}
+// if (annotations_menu_item) {
+// 	annotations_menu_item.singleNodeValue.click();
+// }
+
+window.setInterval(function() {
+var annotations = document.evaluate(
+	"//div[contains(@class, 'ytp-settings-menu')] \
+		//div[ \
+			contains(@class, 'ytp-menuitem-label') and \
+			contains(., 'Annotations') \
+		]",
+	document,
+	null,
+	XPathResult.FIRST_ORDERED_NODE_TYPE,
+	null
+);
+
+	console.log(annotations.singleNodeValue);
+}, 1000);
