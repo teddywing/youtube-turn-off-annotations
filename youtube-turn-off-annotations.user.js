@@ -24,6 +24,7 @@
 var settings_button = document.querySelector('.ytp-settings-button');
 
 // Load annotations menu item by activating & deactivating the settings menu
+// since the menu starts out empty
 settings_button.click();
 settings_button.click();
 
