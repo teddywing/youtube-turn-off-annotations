@@ -4,6 +4,8 @@ YouTube Turn Off Annotations
 A user script that automatically turns off annotations on YouTube videos to
 remove overlay clutter.
 
+**Note:** Only works on initial page load, not when following in-site links.
+
 
 ## Install
 Open the [raw script][1] and click “Install” in the resulting dialog. A [more
